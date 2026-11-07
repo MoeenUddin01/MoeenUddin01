@@ -154,39 +154,14 @@ I design and deploy production-grade **Autonomous Multi-Agent Systems**, **Spec-
 
 <img src="assets/background/cyber-divider.svg" width="100%" />
 
-<!-- ==================== GITHUB TELEMETRY & LIVE STATS ==================== -->
-## 📊 // GITHUB TELEMETRY & ACTIVITY METRICS
-
-<p align="left">
-  <i>Telemetry HUD reflects a verified metric snapshot from GitHub API (calendar-year contributions, public repositories, and repo distribution). The streak telemetry card updates dynamically.</i>
-</p>
+<!-- ==================== GITHUB CONTRIBUTION GRAPH & SNAKE ==================== -->
+## 🟩 // GITHUB CONTRIBUTION GRAPH & SNAKE
 
 <div align="center">
-  <!-- Custom Neon HUD Telemetry Card -->
-  <img src="assets/cards/github-stats.svg" width="100%" alt="Moeen's GitHub Telemetry HUD" />
-  
-  <br/><br/>
-
-  <!-- Live GitHub Streak Stats (Demolab API) -->
-  <img src="https://streak-stats.demolab.com/?user=MoeenUddin01&theme=tokyonight&background=070B19&border=00F0FF&stroke=A855F7&ring=00F0FF&fire=FF6B6B&currStreakLabel=00F0FF&border_radius=12" width="100%" alt="GitHub Streak Telemetry" />
-</div>
-
-<br/>
-
-<img src="assets/background/cyber-divider.svg" width="100%" />
-
-<!-- ==================== GAMIFIED CONTRIBUTION SNAKE ==================== -->
-## 👾 // NEURAL CONTRIBUTION SNAKE
-
-<div align="center">
-  <p align="center">
-    <i>An autonomous cyber-snake traversing my real GitHub contribution matrix. Generated nightly via GitHub Actions.</i>
-  </p>
-
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MoeenUddin01/MoeenUddin01/output/github-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MoeenUddin01/MoeenUddin01/output/github-snake.svg">
-    <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/MoeenUddin01/MoeenUddin01/output/github-snake-dark.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MoeenUddin01/MoeenUddin01/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MoeenUddin01/MoeenUddin01/output/github-contribution-grid-snake.svg">
+    <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/MoeenUddin01/MoeenUddin01/output/github-contribution-grid-snake-dark.svg" width="100%">
   </picture>
 </div>
 
