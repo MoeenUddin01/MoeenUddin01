@@ -1,0 +1,260 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 380" width="100%" height="100%">
+  <defs>
+    <!-- Background gradients -->
+    <radialGradient id="tankGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#0369a1" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#070b19" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c4a6e" stop-opacity="0.85"/>
+      <stop offset="35%" stop-color="#0369a1" stop-opacity="0.75"/>
+      <stop offset="70%" stop-color="#0f172a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0.98"/>
+    </linearGradient>
+    <linearGradient id="glassRimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="glassReflection" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="15%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="85%" stop-color="#38bdf8" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.2"/>
+    </linearGradient>
+    
+    <!-- Caustics overlay -->
+    <linearGradient id="causticLight" x1="0%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Koi 1 Gradient (Kohaku/Red-Orange) -->
+    <linearGradient id="koiRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff3366"/>
+      <stop offset="50%" stop-color="#ff6b00"/>
+      <stop offset="100%" stop-color="#ff9900"/>
+    </linearGradient>
+    <linearGradient id="koiWhite" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#e0f2fe"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+
+    <!-- Koi 2 Gradient (Electric Asagi Cyan/Purple) -->
+    <linearGradient id="koiAsagi" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="neonCyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    .plant-sway-1 {
+      transform-origin: 120px 340px;
+      animation: sway1 5s ease-in-out infinite alternate;
+    }
+    .plant-sway-2 {
+      transform-origin: 410px 340px;
+      animation: sway2 6s ease-in-out infinite alternate;
+    }
+    .plant-sway-3 {
+      transform-origin: 260px 340px;
+      animation: sway1 7s ease-in-out infinite alternate;
+    }
+    @keyframes sway1 {
+      0% { transform: rotate(-3deg); }
+      100% { transform: rotate(4deg); }
+    }
+    @keyframes sway2 {
+      0% { transform: rotate(4deg); }
+      100% { transform: rotate(-3deg); }
+    }
+    .bubble {
+      animation: rise 4s linear infinite;
+    }
+    @keyframes rise {
+      0% { transform: translateY(0); opacity: 0; }
+      10% { opacity: 0.8; }
+      80% { opacity: 0.6; }
+      100% { transform: translateY(-260px); opacity: 0; }
+    }
+    .caustic {
+      animation: causticPulse 4s ease-in-out infinite alternate;
+    }
+    @keyframes causticPulse {
+      0% { opacity: 0.2; transform: skewX(-2deg); }
+      100% { opacity: 0.5; transform: skewX(2deg); }
+    }
+  </style>
+
+  <!-- Ambient Outer Glow -->
+  <rect x="20" y="20" width="500" height="340" rx="30" fill="url(#tankGlow)"/>
+
+  <!-- Glass Tank Chassis -->
+  <rect x="35" y="30" width="470" height="320" rx="24" fill="#040816" stroke="#1e293b" stroke-width="2"/>
+  
+  <!-- Water Volume -->
+  <rect x="40" y="35" width="460" height="310" rx="20" fill="url(#waterGrad)"/>
+
+  <!-- Water Surface Shimmer -->
+  <path d="M 40 55 Q 155 45 270 55 T 500 55 L 500 35 L 40 35 Z" fill="#38bdf8" opacity="0.2"/>
+  <ellipse cx="270" cy="42" rx="210" ry="6" fill="#00f0ff" opacity="0.3" filter="url(#softGlow)"/>
+
+  <!-- Caustic Light Rays -->
+  <g class="caustic">
+    <polygon points="120,40 160,40 220,320 140,320" fill="url(#causticLight)"/>
+    <polygon points="280,40 330,40 400,320 320,320" fill="url(#causticLight)"/>
+    <polygon points="400,40 440,40 490,260 430,260" fill="url(#causticLight)"/>
+  </g>
+
+  <!-- Tank Bottom Sediment & Bioluminescent Rocks -->
+  <path d="M 40 325 Q 160 310 270 322 T 500 320 L 500 345 L 40 345 Z" fill="#090d1e"/>
+  <ellipse cx="140" cy="332" rx="45" ry="12" fill="#0f172a" stroke="#00f0ff" stroke-width="0.5" stroke-opacity="0.5"/>
+  <ellipse cx="220" cy="336" rx="30" ry="9" fill="#1e1b4b" stroke="#a855f7" stroke-width="0.5" stroke-opacity="0.6"/>
+  <ellipse cx="380" cy="330" rx="55" ry="14" fill="#0f172a" stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.5"/>
+  <ellipse cx="440" cy="335" rx="25" ry="8" fill="#1e1b4b" stroke="#00f0ff" stroke-width="0.5" stroke-opacity="0.4"/>
+
+  <!-- Glowing Aquatic Plants (Left) -->
+  <g class="plant-sway-1">
+    <path d="M 120 335 Q 100 240 135 160 Q 140 240 128 335" fill="none" stroke="#00f0ff" stroke-width="3" stroke-linecap="round" opacity="0.75" filter="url(#softGlow)"/>
+    <path d="M 130 335 Q 160 250 145 180 Q 130 260 135 335" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 105 335 Q 85 270 110 200 Q 115 270 112 335" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  </g>
+
+  <!-- Glowing Aquatic Plants (Right) -->
+  <g class="plant-sway-2">
+    <path d="M 420 335 Q 450 230 415 150 Q 405 240 415 335" fill="none" stroke="#a855f7" stroke-width="3" stroke-linecap="round" opacity="0.75" filter="url(#softGlow)"/>
+    <path d="M 405 335 Q 375 240 395 170 Q 400 250 400 335" fill="none" stroke="#c084fc" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 435 335 Q 460 260 440 210 Q 430 270 432 335" fill="none" stroke="#7e22ce" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  </g>
+
+  <!-- Center Accent Coral/Grass -->
+  <g class="plant-sway-3">
+    <path d="M 265 335 Q 245 270 260 215 Q 275 275 270 335" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  </g>
+
+  <!-- Ascending Bubbles (Staggered Animations) -->
+  <g>
+    <circle cx="130" cy="310" r="3" fill="#e0f2fe" opacity="0.7" class="bubble" style="animation-delay: 0s;"/>
+    <circle cx="145" cy="300" r="2" fill="#38bdf8" opacity="0.6" class="bubble" style="animation-delay: 1.2s;"/>
+    <circle cx="125" cy="320" r="4" fill="#00f0ff" opacity="0.5" class="bubble" style="animation-delay: 2.3s;"/>
+    <circle cx="270" cy="320" r="2.5" fill="#e0f2fe" opacity="0.8" class="bubble" style="animation-delay: 0.7s;"/>
+    <circle cx="280" cy="305" r="3.5" fill="#a855f7" opacity="0.5" class="bubble" style="animation-delay: 1.8s;"/>
+    <circle cx="410" cy="315" r="3" fill="#e0f2fe" opacity="0.7" class="bubble" style="animation-delay: 0.4s;"/>
+    <circle cx="425" cy="325" r="2" fill="#00f0ff" opacity="0.8" class="bubble" style="animation-delay: 2.1s;"/>
+    <circle cx="395" cy="305" r="4" fill="#38bdf8" opacity="0.4" class="bubble" style="animation-delay: 3.1s;"/>
+  </g>
+
+  <!-- ==================== KOI FISH 1: Kohaku (Orange/Red/White) ==================== -->
+  <g>
+    <!-- Motion along dynamic swimming path -->
+    <path id="koiPath1" d="M 380 180 C 300 130 180 140 130 200 C 90 250 140 280 230 270 C 350 250 440 240 450 190 C 460 140 430 130 380 180 Z" fill="none"/>
+    <g>
+      <animateMotion dur="14s" repeatCount="indefinite" rotate="auto" path="M 380 170 C 290 120 180 130 130 190 C 90 240 140 275 230 265 C 350 245 440 235 450 185 C 460 135 430 125 380 170 Z"/>
+      
+      <!-- Koi 1 Body Representation -->
+      <g transform="scale(0.85)">
+        <!-- Tail Fin with wave motion -->
+        <path d="M -30 0 C -45 -12 -55 -2 -50 0 C -55 2 -45 12 -30 0 Z" fill="url(#koiWhite)" opacity="0.85">
+          <animateTransform attributeName="transform" type="rotate" values="-8 0 0; 8 0 0; -8 0 0" dur="0.8s" repeatCount="indefinite"/>
+        </path>
+        <!-- Pectoral Fins -->
+        <path d="M 5 -6 C 8 -18 -4 -22 -6 -10 Z" fill="url(#koiWhite)" opacity="0.75"/>
+        <path d="M 5 6 C 8 18 -4 22 -6 10 Z" fill="url(#koiWhite)" opacity="0.75"/>
+        <!-- Dorsal Fin -->
+        <path d="M -15 -2 C -5 -6 5 -6 15 -2 Z" fill="url(#koiWhite)" opacity="0.6"/>
+        <!-- Main Torpedo Body -->
+        <path d="M -32 0 C -25 -11 12 -12 28 0 C 12 12 -25 11 -32 0 Z" fill="url(#koiWhite)"/>
+        <!-- Vibrant Kohaku Scarlet Spots -->
+        <path d="M -18 -3 C -10 -9 2 -8 8 -2 C 2 3 -10 4 -18 -3 Z" fill="url(#koiRed)"/>
+        <path d="M 12 -4 C 18 -7 24 -5 22 0 C 20 4 15 5 12 -4 Z" fill="url(#koiRed)"/>
+        <path d="M -24 -2 C -20 -6 -16 -4 -18 0 C -20 3 -23 2 -24 -2 Z" fill="#0f172a"/>
+        <!-- Whiskers & Eyes -->
+        <circle cx="25" cy="-4" r="1.5" fill="#020617"/>
+        <circle cx="25" cy="4" r="1.5" fill="#020617"/>
+        <circle cx="26" cy="-4" r="0.5" fill="#ffffff"/>
+        <circle cx="26" cy="4" r="0.5" fill="#ffffff"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== KOI FISH 2: Electric Asagi (Cyan/Purple/Silver) ==================== -->
+  <g>
+    <g>
+      <animateMotion dur="18s" begin="-6s" repeatCount="indefinite" rotate="auto" path="M 120 130 C 200 90 340 100 420 150 C 470 190 430 250 330 260 C 210 270 110 230 90 180 C 80 145 100 135 120 130 Z"/>
+      
+      <g transform="scale(0.7) rotate(180)">
+        <!-- Tail Fin -->
+        <path d="M -30 0 C -45 -14 -55 -3 -50 0 C -55 3 -45 14 -30 0 Z" fill="#38bdf8" opacity="0.8">
+          <animateTransform attributeName="transform" type="rotate" values="9 0 0; -9 0 0; 9 0 0" dur="0.9s" repeatCount="indefinite"/>
+        </path>
+        <!-- Pectoral Fins -->
+        <path d="M 5 -6 C 8 -18 -4 -20 -6 -9 Z" fill="#00f0ff" opacity="0.7"/>
+        <path d="M 5 6 C 8 18 -4 20 -6 9 Z" fill="#00f0ff" opacity="0.7"/>
+        <!-- Main Body -->
+        <path d="M -32 0 C -25 -11 12 -12 28 0 C 12 12 -25 11 -32 0 Z" fill="url(#koiAsagi)"/>
+        <!-- Diamond Asagi Scale Patterns -->
+        <path d="M -16 -4 C -8 -7 0 -6 6 -2 C 0 2 -8 3 -16 -4 Z" fill="#1e1b4b" opacity="0.8"/>
+        <!-- Eyes -->
+        <circle cx="25" cy="-4" r="1.5" fill="#00f0ff"/>
+        <circle cx="25" cy="4" r="1.5" fill="#00f0ff"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== KOI FISH 3: Golden Ogon (Deep Water Glow) ==================== -->
+  <g opacity="0.75">
+    <g>
+      <animateMotion dur="22s" begin="-11s" repeatCount="indefinite" rotate="auto" path="M 280 230 C 370 210 430 180 390 120 C 320 80 200 100 160 150 C 130 190 190 240 280 230 Z"/>
+      
+      <g transform="scale(0.55)">
+        <path d="M -30 0 C -45 -12 -55 -2 -50 0 C -55 2 -45 12 -30 0 Z" fill="#fbbf24" opacity="0.8">
+          <animateTransform attributeName="transform" type="rotate" values="-10 0 0; 10 0 0; -10 0 0" dur="0.7s" repeatCount="indefinite"/>
+        </path>
+        <path d="M -32 0 C -25 -11 12 -12 28 0 C 12 12 -25 11 -32 0 Z" fill="#f59e0b"/>
+        <circle cx="25" cy="-4" r="1.5" fill="#78350f"/>
+        <circle cx="25" cy="4" r="1.5" fill="#78350f"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Glass Tank Front Curved Reflection Highlights -->
+  <path d="M 46 45 Q 65 190 46 335 L 75 335 Q 95 190 75 45 Z" fill="url(#glassReflection)"/>
+  <path d="M 470 45 Q 485 190 470 335 L 490 335 Q 500 190 490 45 Z" fill="url(#glassReflection)"/>
+
+  <!-- High-Tech Neon Frame Border (Dual Tone: Electric Cyan & Neon Purple) -->
+  <rect x="35" y="30" width="470" height="320" rx="24" fill="none" stroke="url(#glassRimGrad)" stroke-width="2.5" filter="url(#softGlow)"/>
+
+  <!-- Corner Brackets & Cyberpunk Metric Decals -->
+  <path d="M 35 60 L 35 30 L 65 30" fill="none" stroke="#00f0ff" stroke-width="4"/>
+  <path d="M 505 60 L 505 30 L 475 30" fill="none" stroke="#a855f7" stroke-width="4"/>
+  <path d="M 35 320 L 35 350 L 65 350" fill="none" stroke="#a855f7" stroke-width="4"/>
+  <path d="M 505 320 L 505 350 L 475 350" fill="none" stroke="#00f0ff" stroke-width="4"/>
+
+  <!-- Telemetry Badge (Top Left of Aquarium) -->
+  <g transform="translate(50, 48)">
+    <rect x="0" y="0" width="145" height="20" rx="4" fill="#070b19" fill-opacity="0.8" stroke="#00f0ff" stroke-width="0.8"/>
+    <circle cx="10" cy="10" r="3.5" fill="#00f0ff">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="20" y="14" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="9" font-weight="600" letter-spacing="1">CYBER_AQUARIUM // OK</text>
+  </g>
+
+  <!-- Fish Vital Status (Bottom Right) -->
+  <g transform="translate(345, 322)">
+    <rect x="0" y="0" width="145" height="18" rx="4" fill="#070b19" fill-opacity="0.8" stroke="#a855f7" stroke-width="0.8"/>
+    <text x="10" y="13" fill="#c084fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="8.5" font-weight="600" letter-spacing="1">BIO-FEED: 3 KOI SWIMMING</text>
+  </g>
+</svg>

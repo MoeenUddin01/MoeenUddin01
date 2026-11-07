@@ -1,0 +1,48 @@
+name: Git Koi Virtual Companion
+
+on:
+  schedule:
+    # Just after midnight UTC, so the koi shows the day that just ended
+    - cron: "20 0 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/koi.yml
+
+# Minimum permissions: only contents write is needed to commit updated koi assets
+permissions:
+  contents: write
+
+concurrency: koi
+
+jobs:
+  koi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout Repository
+        # actions/checkout v4.2.2 (pinned to verified commit SHA)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Draw Daily Git Koi
+        # yalongwastaken/git-koi v1.0.2 (pinned to verified commit SHA)
+        uses: yalongwastaken/git-koi@7305e9b1fadee6f43d3b4fa543a25d4cde79856e
+        with:
+          body: asagi
+          output-dir: koi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit Koi if Changed
+        shell: bash
+        run: |
+          git add koi/koi.gif koi/koi.png
+          if git diff --cached --quiet; then
+            echo "The koi is unchanged; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "koi: update daily virtual koi companion"
+          git push

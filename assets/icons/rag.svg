@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 40" width="180" height="40">
+  <defs>
+    <linearGradient id="bg_7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b19"/>
+      <stop offset="60%" stop-color="#0b112c"/>
+      <stop offset="100%" stop-color="#065f46" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="glow_7" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <rect x="2" y="2" width="176" height="36" rx="8" fill="url(#bg_7)" stroke="#059669" stroke-width="1.2" filter="url(#glow_7)"/>
+  <g transform="translate(6, 2)">
+    <path d="M8 8h12a4 4 0 0 1 4 4v14H8a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z" fill="none" stroke="#34D399" stroke-width="2"/><circle cx="22" cy="20" r="5" fill="none" stroke="#34D399" stroke-width="2"/><path d="M26 24l4 4" stroke="#34D399" stroke-width="2"/>
+  </g>
+  <text x="44" y="24" fill="#34D399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" letter-spacing="0.5">Spec-Driven RAG</text>
+  <circle cx="166" cy="20" r="2.5" fill="#34D399" opacity="0.8"/>
+</svg>
