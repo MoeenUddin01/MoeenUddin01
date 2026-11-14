@@ -1,15 +1,3 @@
-# Environment variables
-.env
-.env.*
-!.env.example
-
-# Python bytecode and caches
 __pycache__/
-*.py[cod]
-
-# Virtual environments
-.venv/
-venv/
-
-# OS metadata
+*.pyc
 .DS_Store

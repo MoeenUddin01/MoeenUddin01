@@ -1,0 +1,57 @@
+name: Refresh profile cards
+
+on:
+  schedule:
+    - cron: "17 3 * * *" # every day, after the contribution graph settles
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+    paths:
+      - "render_cards.py"
+      - "scripts/fetch_contributions.py"
+      - "assets/**"
+      - "data/contributions.json"
+      - ".github/workflows/profile.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-cards
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the profile repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install font tooling
+        run: pip install -r requirements.txt
+
+      - name: Refresh contribution data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_LOGIN: MoeenUddin01
+        run: python scripts/fetch_contributions.py
+
+      - name: Render SVG cards
+        run: python render_cards.py
+
+      - name: Commit refreshed cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md preview.html cards data/contributions.json
+          if git diff --staged --quiet; then
+            echo "Cards already up to date."
+          else
+            git commit -m "chore: refresh profile cards"
+            git push
+          fi

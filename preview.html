@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Profile card preview</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 26px 24px 40px;
+    background: #e7f0e9;
+    display: flex;
+    justify-content: center;
+  }
+  main { width: 1200px; max-width: 100%; }
+  img { display: block; width: 100%; height: auto; }
+  .tiles { display: flex; gap: 0.8%; }
+  .tiles a { display: block; width: 32.5%; }
+  .repo { margin-top: 0; }
+  footer {
+    margin-top: 14px;
+    text-align: center;
+    font: 500 12px/1.5 system-ui, sans-serif;
+    color: #4a6355;
+  }
+  footer a { color: #2d6a4f; }
+  @media (max-width: 700px) {
+    body { padding: 10px; }
+    .tiles { gap: 0.8%; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <img src="cards/hero.svg" alt="Moeen Uddin — applied AI engineer">
+  <div class="tiles">
+    <a href="https://github.com/MoeenUddin01/SpecRAG"><img src="cards/tile-ai.svg" alt="Applied AI — retrieval, agents and evaluation"></a>
+<a href="https://github.com/MoeenUddin01/Finora"><img src="cards/tile-build.svg" alt="Product engineering — FastAPI, React and Frappe"></a>
+<a href="https://rag-diagnostic-agent.vercel.app"><img src="cards/tile-live.svg" alt="PlantDoc live demo — AI plant disease diagnostics"></a>
+  </div>
+  <img src="cards/chart.svg" alt="Contributions by month">
+  <img src="cards/contributions.svg" alt="Contribution graph">
+  <a href="https://github.com/MoeenUddin01/SpecRAG"><img src="cards/repo-01-specrag.svg" alt="SpecRAG"></a>
+<a href="https://github.com/MoeenUddin01/Finora"><img src="cards/repo-02-finora.svg" alt="Finora"></a>
+<a href="https://github.com/MoeenUddin01/AegisArm"><img src="cards/repo-03-aegisarm.svg" alt="AegisArm"></a>
+<a href="https://rag-diagnostic-agent.vercel.app"><img src="cards/repo-04-plantdoc.svg" alt="PlantDoc"></a>
+<a href="https://github.com/MoeenUddin01/-Football-Match-Outcome-And-Score-Prediction"><img src="cards/repo-05-football.svg" alt="Football prediction"></a>
+  <footer>More experiments at <a href="https://github.com/MoeenUddin01">github.com/MoeenUddin01</a></footer>
+</main>
+</body>
+</html>
