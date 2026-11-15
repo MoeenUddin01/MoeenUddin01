@@ -677,7 +677,7 @@ def index_card() -> Card:
         h,
         "Index — applied AI, product systems and the live demo",
         "Three-column index: retrieval and agents, full-stack systems, and the PlantDoc live demo.",
-        0.30,
+        0.08,
         body,
     )
 
@@ -718,7 +718,7 @@ def chart_card(stats: dict) -> Card:
         bar_h = max(1.5, count / scale_max * plot_h)
         y = bottom - bar_h
         fill = INK if key == current_key else MOSS
-        delay = 0.20 + i * 0.03
+        delay = 0.12 + i * 0.025
         bars.append(
             f'<rect class="a-grow" style="--d:{delay:.3f}s" x="{num(x)}" y="{num(y)}" '
             f'width="{bar_w}" height="{num(bar_h)}" fill="{fill}"/>'
@@ -782,7 +782,7 @@ def chart_card(stats: dict) -> Card:
         f"{integer(stats['total'])} contributions by month, with a best streak of "
         f"{stats['longest']} days, {integer(stats['active'])} active days and a busiest "
         f"day of {busiest['count']} on {long_day(busiest['date'])}.",
-        0.82,
+        0.14,
         body,
     )
 
@@ -880,7 +880,7 @@ def graph_card(data: dict, stats: dict) -> Card:
         f"{PROFILE['name']} — contribution graph",
         f"{integer(stats['total'])} contributions over {stats['days']} days, "
         f"{integer(stats['active'])} active days and a {stats['longest']}-day best streak.",
-        1.60,
+        0.20,
         body,
     )
 
@@ -902,7 +902,7 @@ def repos_head_card() -> Card:
         "repos-head.svg", w, h,
         "Selected work",
         "Section heading for five featured repositories.",
-        1.90, body,
+        0.26, body,
     )
 
 
@@ -923,7 +923,7 @@ def repo_card(repo: dict, index: int) -> Card:
         f"repo-{index:02d}-{repo['slug']}.svg", w, h,
         f"{repo['name']} — featured project",
         repo["desc"],
-        2.02 + index * 0.08,
+        0.32 + index * 0.05,
         body,
     )
 
@@ -945,7 +945,7 @@ def footer_card(stats: dict) -> Card:
         "footer.svg", w, h,
         "Colophon",
         "Footer with archive link and colophon.",
-        2.60, body,
+        0.58, body,
     )
 
 
