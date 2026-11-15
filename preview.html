@@ -4,51 +4,52 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Profile card preview</title>
+<title>Broadsheet — profile preview</title>
 <style>
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
+  html { background: #0d1117; }
   body {
     margin: 0;
-    padding: 26px 24px 40px;
-    background: #e7f0e9;
+    padding: 40px 20px 60px;
+    background: #0d1117;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
-  main { width: 1200px; max-width: 100%; }
+  main { width: 880px; max-width: 100%; box-shadow: 0 34px 90px -34px #000; }
   img { display: block; width: 100%; height: auto; }
-  .tiles { display: flex; gap: 0.8%; }
-  .tiles a { display: block; width: 32.5%; }
-  .repo { margin-top: 0; }
   footer {
-    margin-top: 14px;
-    text-align: center;
-    font: 500 12px/1.5 system-ui, sans-serif;
-    color: #4a6355;
+    width: 880px;
+    max-width: 100%;
+    margin: 14px auto 0;
+    display: flex;
+    justify-content: space-between;
+    font: 500 9px/1.5 system-ui, sans-serif;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #6e7681;
   }
-  footer a { color: #2d6a4f; }
-  @media (max-width: 700px) {
-    body { padding: 10px; }
-    .tiles { gap: 0.8%; }
-  }
+  footer a { color: #8aa595; text-decoration: none; }
 </style>
 </head>
 <body>
 <main>
-  <img src="cards/hero.svg" alt="Moeen Uddin — applied AI engineer">
-  <div class="tiles">
-    <a href="https://github.com/MoeenUddin01/SpecRAG"><img src="cards/tile-ai.svg" alt="Applied AI — retrieval, agents and evaluation"></a>
-<a href="https://github.com/MoeenUddin01/Finora"><img src="cards/tile-build.svg" alt="Product engineering — FastAPI, React and Frappe"></a>
-<a href="https://rag-diagnostic-agent.vercel.app"><img src="cards/tile-live.svg" alt="PlantDoc live demo — AI plant disease diagnostics"></a>
-  </div>
-  <img src="cards/chart.svg" alt="Contributions by month">
-  <img src="cards/contributions.svg" alt="Contribution graph">
-  <a href="https://github.com/MoeenUddin01/SpecRAG"><img src="cards/repo-01-specrag.svg" alt="SpecRAG"></a>
-<a href="https://github.com/MoeenUddin01/Finora"><img src="cards/repo-02-finora.svg" alt="Finora"></a>
-<a href="https://github.com/MoeenUddin01/AegisArm"><img src="cards/repo-03-aegisarm.svg" alt="AegisArm"></a>
-<a href="https://rag-diagnostic-agent.vercel.app"><img src="cards/repo-04-plantdoc.svg" alt="PlantDoc"></a>
-<a href="https://github.com/MoeenUddin01/-Football-Match-Outcome-And-Score-Prediction"><img src="cards/repo-05-football.svg" alt="Football prediction"></a>
-  <footer>More experiments at <a href="https://github.com/MoeenUddin01">github.com/MoeenUddin01</a></footer>
+  <img src="cards/hero.svg" alt="Masthead with name, standfirst, contribution totals and a halftone portrait.">
+  <img src="cards/index.svg" alt="Three-column index: retrieval and agents, full-stack systems, and the PlantDoc live demo.">
+  <img src="cards/chart.svg" alt="1,110 contributions by month, with a best streak of 24 days, 219 active days and a busiest day of 31 on Nov 7, 2026.">
+  <img src="cards/contributions.svg" alt="1,110 contributions over 366 days, 219 active days and a 24-day best streak.">
+  <img src="cards/repos-head.svg" alt="Section heading for five featured repositories.">
+  <img src="cards/repo-01-specrag.svg" alt="A modular, spec-driven RAG architecture for document retrieval and LLM context engineering.">
+  <img src="cards/repo-02-finora.svg" alt="Accounting and invoicing for customers, suppliers, products, sales, purchases, taxes and reports.">
+  <img src="cards/repo-03-aegisarm.svg" alt="Closed-loop robotic predictive maintenance with PyTorch LSTMs and PyBullet physics.">
+  <img src="cards/repo-04-plantdoc.svg" alt="Upload a leaf, get an instant diagnosis — EfficientNet-B2 paired with retrieval-augmented generation.">
+  <img src="cards/repo-05-football.svg" alt="Elo ratings, leak-free time-series features and XGBoost/Poisson tournament simulation.">
+  <img src="cards/footer.svg" alt="Footer with archive link and colophon.">
 </main>
+<footer>
+  <span>Local preview — Broadsheet</span>
+  <a href="https://github.com/MoeenUddin01">github.com/MoeenUddin01</a>
+</footer>
 </body>
 </html>
