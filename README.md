@@ -3,8 +3,8 @@
 <div>
 <img src="cards/hero.svg" width="100%" align="left" alt="Masthead with name, standfirst, contribution totals and a halftone portrait.">
 <img src="cards/index.svg" width="100%" align="left" alt="Three-column index: retrieval and agents, full-stack systems, and the PlantDoc live demo.">
-<img src="cards/chart.svg" width="100%" align="left" alt="1,116 contributions by month, with a best streak of 24 days, 220 active days and a busiest day of 31 on Nov 7, 2026.">
-<img src="cards/contributions.svg" width="100%" align="left" alt="1,116 contributions over 365 days, 220 active days and a 24-day best streak.">
+<img src="cards/chart.svg" width="100%" align="left" alt="1,117 contributions by month, with a best streak of 24 days, 220 active days and a busiest day of 31 on Nov 7, 2026.">
+<img src="cards/contributions.svg" width="100%" align="left" alt="1,117 contributions over 365 days, 220 active days and a 24-day best streak.">
 <img src="cards/repos-head.svg" width="100%" align="left" alt="Section heading for five featured repositories.">
 <a href="https://github.com/MoeenUddin01/SpecRAG"><img src="cards/repo-01-specrag.svg" width="100%" align="left" alt="A modular, spec-driven RAG architecture for document retrieval and LLM context engineering."></a>
 <a href="https://github.com/MoeenUddin01/Finora"><img src="cards/repo-02-finora.svg" width="100%" align="left" alt="Accounting and invoicing for customers, suppliers, products, sales, purchases, taxes and reports."></a>
