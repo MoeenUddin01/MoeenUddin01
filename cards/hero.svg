@@ -84,9 +84,9 @@ text { font-family: 'DM Sans', Arial, Helvetica, sans-serif; }
 
 <g class="a-fade" style="--d:.30s">
   <line x1="32" y1="242" x2="480" y2="242" stroke="#b9b09a" stroke-width="1"/>
-  <text x="32" y="262" font-size="8" fill="#4a4a3e" font-weight="600" letter-spacing="1.2">1,132 CONTRIBUTIONS</text>
+  <text x="32" y="262" font-size="8" fill="#4a4a3e" font-weight="600" letter-spacing="1.2">1,141 CONTRIBUTIONS</text>
   <line x1="158" y1="248" x2="158" y2="267" stroke="#b9b09a" stroke-width="1"/>
-  <text x="174" y="262" font-size="8" fill="#4a4a3e" font-weight="600" letter-spacing="1.2">222 ACTIVE DAYS</text>
+  <text x="174" y="262" font-size="8" fill="#4a4a3e" font-weight="600" letter-spacing="1.2">223 ACTIVE DAYS</text>
   <line x1="276" y1="248" x2="276" y2="267" stroke="#b9b09a" stroke-width="1"/>
   <text x="292" y="262" font-size="8" fill="#4a4a3e" font-weight="600" letter-spacing="1.2">24-DAY STREAK</text>
 </g>
